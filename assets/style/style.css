@@ -1,0 +1,248 @@
+#banner {
+    /* Attention : penser à mettre l'url pour mettre le chemin de l'image */
+    /* .. Permet de remonter l'image dans le fichier assets */
+    background-image: url(../img/huile.jpg);
+    /* le background-size :cover permet de mettre l'image sur la largeur de l'écran en conservant au maximum les proportions  */
+    background-size: cover;
+    /* no-repeat afin que l'image ne se repète pas  */
+    background-repeat: no-repeat;
+    /* On travaille en VH pour garder les proportions (hauteur) selon les écrans */
+    height: 55vh;
+    /* un display : flex dit que ton container va être flexible. Permet de lui donner une direction.  */
+    display: flex;
+    /* le flex-direction permet de donner la direction */
+    flex-direction: column;
+    /* Pour centrer le texte */
+    justify-content: center;
+    align-items: center;
+    /* font-family pour choisir la police */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-size pour modifier la taille. Rapport police/écran*/
+    font-size: 4rem;
+    /* font-weight pour mettre en gras, italic,... */
+    font-weight: bold;
+    /* color pour changer la couleur du texte */
+    color: rgb(63, 7, 63);
+}
+.fontThibobo {
+    font-family: Thibobo;
+}
+
+.fontThifooter {
+    font-family: Thifooter;
+}
+
+/* ////////// NAVBAR ////////// */
+#navbar {
+    background-color: rgb(63, 7, 63);
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navButton {
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+/* Permet d'enlever le souligner des liens */
+.navButton a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Le a:hover permet de changer la couleur du texte au passage de la souris */
+.navButton a:hover {
+    color: rgb(255, 146, 255);
+}
+
+.search {
+    padding: 0.5rem;
+    margin: 0.5rem 0.5rem 0.5rem auto;
+}
+
+#presentation {
+    height: 20vh;
+    text-align: justify;
+    /* diplay flex permet de definir le container en mode flexible (cela me permettra d'agencer les divs à ma convenance */
+    display: flex;
+    /* le flex-direction permet de donner la direction */
+    flex-direction: column;
+    /* justify-content:center permet de centrer horizontalement les divs */
+    justify-content: center;
+    /* align-items:center permet de centrer verticalement les divs */
+    align-items: center;
+}
+
+#products {
+    height: 90vh;
+    /* J'indique que mon container products sera en mode flex */
+    display: flex;
+    /* J'indique la direction de mes cards */
+    flex-direction: row;
+    /* J'occupe tout l'espace entre chaque card à l'aide d'un justify content */
+    justify-content: space-around;
+
+}
+
+
+/* ////////// FOOTER ////////// */
+#footer {
+    background-color: rgb(63, 7, 63);
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#siteMap {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.footerButton0 {
+    color: white;
+    font-weight: bold;
+}
+
+.footerButton a {
+    color: white;
+    text-decoration: none;
+}
+
+.footerButton a:hover {
+    color: rgb(255, 146, 255);
+
+}
+
+#legals {
+    padding-top: 5.8rem;
+    padding-bottom: 5.8rem;
+}
+
+/* ////////// CSS DES CARDS ////////// */
+
+/* On créer la classe card qui représentera nos produits */
+.card {
+    /* Pour aligner verticalement on utilise align content après l'avoir rendu flex */
+    display: flex;
+    /* Utiliser soit space-between; soit space-around. A essayer */
+    align-content: space-between;
+    /* Pour l'afficher en cologne et non en ligne met column a notre flex-direction */
+    flex-direction: column;
+    /* On travaille en VW pour garder les proportions (largeur) selon les écrans */
+    width: 20vw;
+    /* Nous souhaitons occuper 100% du container*/
+    height: 100%;
+    background-color: white;
+}
+
+/* Ici nous travaillons avec des % pour respecter la taille dans la classe card */
+.cardImage {
+
+    height: auto;
+    width: 90%;
+    /* Nous utilisons du margin auto pour centrer horizontalement */
+    margin: auto;
+    /* Permet de laisser une marge au dessus de l'image pour ne pas que celle-ci soit collé */
+    padding-top: 5%;
+
+}
+
+.cardText {
+
+    height: 35%;
+    width: 90%;
+    margin: auto;
+    /* Le overflow : scroll permet d'avoir une hauteur fixe grâce a un scroll lorsque des textes long de différentes tailles */
+    /* Pour mettre le texte en justifié : text-align: justify; */
+    text-align: justify;
+
+}
+
+.cardButton {
+
+    height: 10%;
+    width: 90%;
+    margin: auto;
+    /* Pour mettre le bouton à droite : text-align :right; */
+    text-align: right;
+}
+
+/* La class responsive ajouter à l'image permet de rendre l'image responsive */
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+/* /////////////////////////////////
+/////////// MEDIA QUERY ///////////
+///////////////////////////////// */
+
+/* On effectue un media query lorsque la largeur de l'écran est inférieur à 480px */
+@media all and (max-width: 650px) {
+    #banner {
+        width: auto;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    #navbar {
+        width: auto;
+        height: auto;
+    }
+
+    .search {
+        display: none;
+    }
+
+    #presentation {
+        width: auto;
+        height: auto;
+    }
+
+    #products {
+        flex-direction: column;
+        width: auto;
+        height: auto;
+    }
+
+    .card {
+        width: auto;
+    }
+
+    .cardImage {
+        width: auto;
+    }
+
+    .cardText {
+        width: auto;
+    }
+
+    .cardButton {
+        width: auto;
+    padding-bottom: 0.5rem;
+    }
+    #footer {
+        width: auto;
+        height: auto;
+    }
+}
+
+/* ////////// Fonts customs /////////// */
+
+ @font-face {
+     font-family: 'Thibobo';
+     src: url(../fonts/ATViCE.ttf);
+ }
+ @font-face {
+    font-family: 'Thifooter';
+    src: url(../fonts/AppleGaramond.ttf);
+}
